@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helen'im | Seni Seviyorum</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="icon" type="image/png" href="https://em-content.zobj.net/source/microsoft-teams/337/heart-with-ribbon_1f49d.png">
+</head>
+<body>
+    <div class="music-player">
+        <audio id="bgMusic" loop autoplay>
+            <source src="Duman - Seni Kendime Sakladım.mp3" type="audio/mp3">
+        </audio>
+        <div class="music-info">
+            <span class="song-title">Seni Kendime Sakladım</span>
+            <span class="artist">Duman</span>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+        <button class="btn btn--music" id="musicToggle">🎵</button>
+    </div>
+
+    <header class="hero">
+        <div class="hero__background">
+            <div class="floating-hearts"></div>
+        </div>
+        <div class="hero__content">
+            <h1 class="hero__title">İyi ki Doğdun Helen'im ❤️</h1>
+            <p class="hero__subtitle">Doğum günün kutlu olsun biricik sevgilim...</p>
+            <button class="btn btn--primary" id="startButton">❤️ Başla ❤️</button>
+        </div>
+    </header>
+
+    <section class="story">
+        <div class="story__container">
+            <div class="story__step" id="step1">
+                <div class="emotion-icon">🎂</div>
+                <h2 class="romantic-text">Canım Sevgilim</h2>
+                <p class="story-text">Bugün senin doğum günün ve hayatımda olduğun için çok mutluyum. Seninle geçirdiğim her an paha biçilemez...</p>
+                <button class="btn btn--next" data-next="step2">İleri ❤️</button>
+            </div>
+            
+            <div class="story__step" id="step2">
+                <div class="emotion-icon">🎉</div>
+                <p class="story-text">Yeni yaşında tüm dileklerinin gerçekleşmesini diliyorum. Sen benim en büyük şansımsın...</p>
+                <button class="btn btn--next" data-next="step3">İleri ❤️</button>
+            </div>
+            
+            <div class="story__step" id="step3">
+                <div class="emotion-icon">🎁</div>
+                <h2 class="romantic-text">Bir Dilek Tut</h2>
+                <p class="story-text">Gözlerini kapat ve bir dilek tut... Ben senin için her gün mutluluğumuzu diliyorum. Seni sonsuza kadar seveceğim...</p>
+                <button class="btn btn--next" data-next="step4">İleri ❤️</button>
+            </div>
+
+            <div class="story__step" id="step4">
+                <div class="emotion-icon">💖</div>
+                <h2 class="romantic-text">İyi ki Doğdun Aşkım</h2>
+                <p class="story-text">Seninle nice mutlu yıllara... Her yeni yaşında yanında olmak istiyorum. Sen benim en değerlimsin...</p>
+                <div class="birthday-cake">
+                    <div class="cake">🎂</div>
+                    <button class="btn btn--blow" id="blowCandles">Mumları Üfle</button>
+                </div>
+                <button class="btn btn--next" data-next="forgive">İleri ❤️</button>
+            </div>
+
+            <div class="story__step" id="forgive">
+                <div class="emotion-icon">🥺</div>
+                <h2 class="romantic-text">Doğum Gününde Beni Affeder misin?</h2>
+                <p class="story-text">Seni üzdüğüm için çok pişmanım. Söz veriyorum bundan sonra seni hep mutlu edeceğim...</p>
+                <div class="forgive-buttons">
+                    <button class="btn btn--yes" id="yesButton">Evet ❤️</button>
+                    <button class="btn btn--no" id="noButton">Hayır</button>
+                </div>
+            </div>
+
+            <div class="story__step" id="final">
+                <div class="emotion-icon">💝</div>
+                <h2 class="romantic-text">Teşekkür Ederim Aşkım</h2>
+                <p class="story-text">Seni çok seviyorum. İyi ki varsın, iyi ki doğdun, iyi ki beni affettin. Bundan sonra her anını özel kılacağım...</p>
+                <button class="btn btn--next" data-next="memories">Devam Et ❤️</button>
+            </div>
+
+            <div class="story__step" id="memories">
+                <div class="emotion-icon">💭</div>
+                <h2 class="romantic-text">Seninle Geçen Her An</h2>
+                <div class="memory-text-container">
+                    <p class="memory-text active">İlk tanıştığımız gün, kalbim heyecandan yerinden çıkacak gibiydi...</p>
+                    <p class="memory-text">İlk mesajını aldığımda, dünyalar benim olmuştu...</p>
+                    <p class="memory-text">Seninle ilk el ele tutuşmamız, zamanın durduğu andı...</p>
+                    <p class="memory-text">Her gülüşün, her bakışın benim için bir hazine...</p>
+                    <p class="memory-text">Seninle yaşadığım her an, hayatımın en değerli anıları...</p>
+                </div>
+                <button class="btn btn--next" data-next="promises">İlerle ❤️</button>
+            </div>
+
+            <div class="story__step" id="promises">
+                <div class="emotion-icon">🤝</div>
+                <h2 class="romantic-text">Sana Söz Veriyorum</h2>
+                <div class="promises-container">
+                    <div class="promise">
+                        <span class="promise-icon">💝</span>
+                        <p>Her zaman seni seveceğim</p>
+                    </div>
+                    <div class="promise">
+                        <span class="promise-icon">🌟</span>
+                        <p>Her anını özel kılacağım</p>
+                    </div>
+                    <div class="promise">
+                        <span class="promise-icon">🤗</span>
+                        <p>Hep yanında olacağım</p>
+                    </div>
+                    <div class="promise">
+                        <span class="promise-icon">💑</span>
+                        <p>Seni hep mutlu edeceğim</p>
+                    </div>
+                </div>
+                <button class="btn btn--next" data-next="letter">Mektubumu Oku ❤️</button>
+            </div>
+
+            <div class="story__step" id="letter">
+                <div class="emotion-icon">💌</div>
+                <h2 class="romantic-text">Sana Yazdıklarım</h2>
+                <div class="love-letter">
+                    <p>Sevgili Helen,</p>
+                    <p>Her yeni yaşın, hayatıma kattığın güzellikler gibi özel. Seninle geçirdiğim her an, nefes aldığım her saniye benim için paha biçilemez.</p>
+                    <p>Sen benim en güzel şansım, en değerli varlığım, hayatımın anlamısın. Seninle paylaştığım her gülüş, her gözyaşı, her an benim için çok kıymetli.</p>
+                    <p>Belki bazen hatalar yapıyorum, belki seni üzüyorum ama inan ki seni çok seviyorum. Senin bir gülüşün benim için dünyalara bedel.</p>
+                    <p>İyi ki doğdun, iyi ki varsın, iyi ki hayatımdasın...</p>
+                    <p class="letter-signature">Seni Çok Seven,<br>Aşkın</p>
+                </div>
+                <button class="btn btn--next" data-next="final-wish">Son Dileğim ❤️</button>
+            </div>
+
+            <div class="story__step" id="final-wish">
+                <div class="emotion-icon">✨</div>
+                <h2 class="romantic-text">Son Bir Dileğim Var</h2>
+                <p class="story-text">Gözlerini kapat ve benim için bir şey daha dile...</p>
+                <button class="btn btn--special" id="finalWishButton">Dileğimi Söyle ❤️</button>
+                <button class="btn btn--next" data-next="grand-finale">Son Sürpriz ❤️</button>
+            </div>
+
+            <div class="story__step" id="grand-finale">
+                <div class="stars-background"></div>
+                <div class="finale-content">
+                    <div class="emotion-icon">💫</div>
+                    <h2 class="romantic-text">Sonsuz Sevgimle...</h2>
+                    <div class="finale-gallery">
+                        <div class="finale-message">
+                            <span class="message-icon">💝</span>
+                            <p>Seninle her anım muhteşem</p>
+                        </div>
+                        <div class="finale-message">
+                            <span class="message-icon">💫</span>
+                            <p>Sen benim en güzel şansımsın</p>
+                        </div>
+                        <div class="finale-message">
+                            <span class="message-icon">💖</span>
+                            <p>Seninle geçen her gün bir hediye</p>
+                        </div>
+                    </div>
+                    <div class="final-poem">
+                        <p>Her yeni yaşında yanında olmak,</p>
+                        <p>Seninle gülmek, ağlamak, dans etmek,</p>
+                        <p>Ve seni sonsuza dek sevmek istiyorum...</p>
+                    </div>
+                    <button class="btn btn--finale" id="finaleButton">❤️ Seni Seviyorum ❤️</button>
+                </div>
+            </div>
+        </div>
+        <div class="floating-balloons"></div>
+    </section>
+
+    <!-- Sürpriz butonu -->
+    <button class="btn btn--surprise" id="surpriseButton" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: #ff1f5a; color: white; border: none; border-radius: 50%; width: 60px; height: 60px; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+        🎁
+    </button>
+
+    <!-- Sürpriz galeri -->
+    <div class="surprise-gallery" id="surpriseGallery">
+        <h3 style="font-family: var(--font-romantic); color: var(--color-primary); font-size: 2rem; margin-bottom: 1rem;">
+            Sana Özel Sürprizlerim Var! 🎉
+        </h3>
+        <div style="display: grid; gap: 1rem; margin: 1rem 0;">
+            <p>🎵 Favori şarkımız çalıyor...</p>
+            <p>💝 Her gün seni daha çok seviyorum</p>
+            <p>🎊 Seninle nice mutlu yıllara</p>
+        </div>
+        <button class="btn btn--special" onclick="this.parentElement.classList.remove('active')">
+            Teşekkür Ederim ❤️
+        </button>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

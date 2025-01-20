@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Media files
+*.mp3
+*.mp4
+*.wav
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db 
