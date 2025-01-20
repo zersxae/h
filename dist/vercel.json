@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "outputDirectory": "dist",
+  "buildCommand": false,
+  "public": true,
+  "framework": null
+} 
